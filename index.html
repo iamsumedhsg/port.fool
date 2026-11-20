@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumedh | i.ssg</title>
+  <meta name="description" content="Sumedh Singh Gautam (@iamsumedhsg) - AI Developer & Full-Stack Engineer portfolio inspired by Discord's minimalist user profile.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="starwars-space"></canvas>
+
+  <header class="top-nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="status-dot"></span>
+        <span class="brand-username">i.ssg</span>
+      </div>
+
+      <nav class="nav-shortcuts">
+        <a href="#about" class="shortcut-link active">About</a>
+        <a href="#projects" class="shortcut-link">Projects</a>
+        <a href="#roles" class="shortcut-link">Roles &amp; Skills</a>
+        <a href="#experience" class="shortcut-link">Activity</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sumedhsinghg@gmail.com" target="_blank" rel="noopener noreferrer" class="shortcut-link" title="Open Gmail composer">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="discord-layout">
+
+    <div class="discord-card">
+      
+      <div class="profile-banner" id="profile-banner">
+        
+        <canvas id="banner-mosaic-canvas" class="banner-mosaic-canvas"></canvas>
+
+        <div class="banner-mosaic-controls">
+          <button class="banner-btn banner-btn-icon" id="mosaic-shuffle-btn" title="Cycle color theme" aria-label="Cycle color theme">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.99 6.57 2.6L21 8"/>
+              <path d="M21 3v5h-5"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="profile-header">
+        
+        <div class="avatar-wrapper">
+          <div class="avatar avatar-interactive" id="profile-avatar" title="Click to switch avatar style!" aria-label="Sumedh Singh Gautam Avatar">
+            <svg id="avatar-svg" viewBox="0 0 100 100" class="avatar-vector" fill="none" xmlns="http://www.w3.org/2000/svg">
+              
+              <rect width="100" height="100" fill="#1e1114"/>
+              
+              <circle cx="50" cy="50" r="46" stroke="#da373c" stroke-width="2" stroke-dasharray="8 5"/>
+              
+              <path d="M16 86 C16 70 32 64 50 64 C68 64 84 70 84 86 L84 100 L16 100 Z" fill="#2b2d31"/>
+              <path d="M40 64 L50 80 L60 64 Z" fill="#da373c"/>
+              
+              <rect x="33" y="30" width="34" height="32" rx="8" fill="#f5d0b5"/>
+              
+              <path d="M28 32 C28 20 38 15 50 15 C62 15 72 20 72 32 C65 26 55 24 44 26 Z" fill="#18191c"/>
+              
+              <rect x="30" y="36" width="40" height="13" rx="4" fill="#111214" stroke="#da373c" stroke-width="1.5"/>
+              <path d="M36 41 L40 43 L36 45" stroke="#23a55a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="43" y1="45" x2="47" y2="45" stroke="#23a55a" stroke-width="1.5"/>
+              <path d="M64 41 L60 43 L64 45" stroke="#ff4d4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <path d="M24 38 C24 18 37 10 50 10 C63 10 76 18 76 38" stroke="#da373c" stroke-width="3" stroke-linecap="round"/>
+              <rect x="20" y="34" width="8" height="18" rx="4" fill="#da373c"/>
+              <rect x="72" y="34" width="8" height="18" rx="4" fill="#da373c"/>
+              
+              <path d="M24 46 C24 56 34 58 40 56" stroke="#f2f3f5" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="41" cy="56" r="2.2" fill="#23a55a"/>
+            </svg>
+          </div>
+          
+          <div class="online-badge" id="profile-online-badge" title="Status: Online &bull; Ready to Build (Click to switch!)">
+            <span class="status-pulse-ring" id="status-pulse-ring"></span>
+            <svg class="status-icon" id="status-icon-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+              <path d="M8.5 1.5L2.5 9h5l-1 5.5L13.5 7h-5l1-5.5z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="badges-row">
+          <div class="discord-badge" title="AI Systems Developer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+              <rect x="9" y="9" width="6" height="6"></rect>
+              <line x1="9" y1="1" x2="9" y2="4"></line>
+              <line x1="15" y1="1" x2="15" y2="4"></line>
+              <line x1="9" y1="20" x2="9" y2="23"></line>
+              <line x1="15" y1="20" x2="15" y2="23"></line>
+              <line x1="20" y1="9" x2="23" y2="9"></line>
+              <line x1="20" y1="14" x2="23" y2="14"></line>
+              <line x1="1" y1="9" x2="4" y2="9"></line>
+              <line x1="1" y1="14" x2="4" y2="14"></line>
+            </svg>
+          </div>
+          <div class="discord-badge" title="Active Developer / Open Source Contributor">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="discord-badge" title="Full-Stack Engineer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <div class="discord-badge" title="Multi-Agent Specialist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-identity">
+        <h1 class="display-name">Sumedh Singh Gautam</h1>
+        <div class="handle-row">
+          <span class="user-handle">iamsumedhsg</span>
+          <span class="pronoun-tag">he/him</span>
+        </div>
+
+        <div class="custom-status">
+          <span class="status-emoji">&#9889;</span>
+          <span class="status-text">Building multi-agent AI systems &amp; scalable web applications</span>
+        </div>
+
+        <div class="profile-actions">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sumedhsinghg@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-gmail" title="Open Gmail composer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Gmail
+          </a>
+          <a href="https://github.com/iamsumedhsg" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/sumedh-singh-gautam" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="profile-divider"></div>
+
+      <section id="about" class="profile-section">
+        <h2 class="section-label">ABOUT ME</h2>
+        <div class="bio-card">
+          <p class="bio-text">
+            Software developer passionate about artificial intelligence, modern full-stack systems, and scalable applications. Experienced in building real-world projects using LLM orchestration, multi-agent evaluation workflows, and clean backend architectures.
+          </p>
+          <p class="bio-text">
+            Strong problem-solving foundation with an emphasis on code modularity, low-latency API communication, and collaborative open-source engineering.
+          </p>
+        </div>
+      </section>
+
+      <section class="profile-section">
+        <h2 class="section-label">ACTIVITY</h2>
+        <div class="activity-card">
+          <div class="activity-icon-wrap">
+            <svg class="activity-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <div class="activity-details">
+            <div class="activity-type">PLAYING A GAME</div>
+            <div class="activity-name">Visual Studio Code</div>
+            <div class="activity-state">Developing Multi-Agent LLM Orchestrator</div>
+            <div class="activity-party">Workspace: LLM-Arena &bull; Active Turn</div>
+            <div class="activity-timer" id="activity-timer">02:41:18 elapsed</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="roles" class="profile-section">
+        <h2 class="section-label">ROLES &bull; SKILLS</h2>
+        
+        <div class="roles-group">
+          <span class="roles-sublabel">Languages:</span>
+          <div class="roles-wrap">
+            <span class="role-pill"><span class="role-dot dot-yellow"></span>Java</span>
+            <span class="role-pill"><span class="role-dot dot-red"></span>Python</span>
+            <span class="role-pill"><span class="role-dot dot-yellow"></span>JavaScript (ES6+)</span>
+            <span class="role-pill"><span class="role-dot dot-cyan"></span>TypeScript</span>
+            <span class="role-pill"><span class="role-dot dot-purple"></span>C</span>
+            <span class="role-pill"><span class="role-dot dot-purple"></span>C++</span>
+          </div>
+        </div>
+
+        <div class="roles-group">
+          <span class="roles-sublabel">Web &amp; Backend:</span>
+          <div class="roles-wrap">
+            <span class="role-pill"><span class="role-dot dot-cyan"></span>React.js</span>
+            <span class="role-pill"><span class="role-dot dot-green"></span>Node.js</span>
+            <span class="role-pill"><span class="role-dot dot-white"></span>Express.js</span>
+            <span class="role-pill"><span class="role-dot dot-orange"></span>HTML5 / CSS3</span>
+            <span class="role-pill"><span class="role-dot dot-red"></span>REST Architecture</span>
+          </div>
+        </div>
+
+        <div class="roles-group">
+          <span class="roles-sublabel">AI &amp; Systems Engineering:</span>
+          <div class="roles-wrap">
+            <span class="role-pill role-special"><span class="role-dot dot-green"></span>OpenAI Agents SDK</span>
+            <span class="role-pill role-special"><span class="role-dot dot-red"></span>Multi-Agent Orchestration</span>
+            <span class="role-pill role-special"><span class="role-dot dot-orange"></span>Prompt Engineering</span>
+            <span class="role-pill role-special"><span class="role-dot dot-yellow"></span>AI Benchmarking</span>
+            <span class="role-pill role-special"><span class="role-dot dot-white"></span>Data Structures &amp; Algorithms</span>
+            <span class="role-pill role-special"><span class="role-dot dot-white"></span>Object-Oriented Design</span>
+          </div>
+        </div>
+
+        <div class="roles-group">
+          <span class="roles-sublabel">Tools &amp; Databases:</span>
+          <div class="roles-wrap">
+            <span class="role-pill"><span class="role-dot dot-red"></span>MySQL</span>
+            <span class="role-pill"><span class="role-dot dot-orange"></span>Git &amp; GitHub</span>
+            <span class="role-pill"><span class="role-dot dot-yellow"></span>Linux Terminal</span>
+            <span class="role-pill"><span class="role-dot dot-cyan"></span>VS Code</span>
+            <span class="role-pill"><span class="role-dot dot-orange"></span>Postman</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="profile-section">
+        <div class="section-label-row">
+          <h2 class="section-label">PINNED PROJECTS (5)</h2>
+          <span class="section-badge">PRODUCTION REPOSITORIES</span>
+        </div>
+
+        <div class="projects-list">
+
+          <article class="discord-project-card">
+            <div class="proj-header">
+              <div class="proj-title-wrap">
+                <span class="proj-hash">#</span>
+                <h3 class="proj-title">ai-persona-chat</h3>
+              </div>
+              <span class="proj-pill">React &bull; OpenAI API</span>
+            </div>
+
+            <p class="proj-desc">
+              AI-powered conversational platform capable of simulating multiple public personalities using prompt engineering and context-aware conversations.
+            </p>
+
+            <ul class="proj-bullets">
+              <li>Implemented dynamic persona switching with context preservation and low-latency API communication.</li>
+              <li>Designed responsive chat interface with modular components and clean REST backend architecture.</li>
+              <li>Focused on scalable prompts and maintainable service structure.</li>
+            </ul>
+
+            <div class="proj-meta">
+              <div class="proj-tags">
+                <span class="ptag">React.js</span>
+                <span class="ptag">Node.js</span>
+                <span class="ptag">Express.js</span>
+                <span class="ptag">OpenAI API</span>
+              </div>
+              <a href="https://github.com/iamsumedhsg" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
+                View Repo &rarr;
+              </a>
+            </div>
+          </article>
+
+          <article class="discord-project-card">
+            <div class="proj-header">
+              <div class="proj-title-wrap">
+                <span class="proj-hash">#</span>
+                <h3 class="proj-title">llm-arena</h3>
+              </div>
+              <span class="proj-pill">OpenAI Agents SDK</span>
+            </div>
+
+            <p class="proj-desc">
+              Multi-agent evaluation platform where multiple LLMs generate responses simultaneously for automated quality comparison.
+            </p>
+
+            <ul class="proj-bullets">
+              <li>Designed multi-agent evaluation platform orchestrating concurrent LLM generation pipelines.</li>
+              <li>Built comparison workflow to evaluate model outputs and determine the highest-quality response.</li>
+              <li>Explored agent collaboration, prompt evaluation, response ranking, and benchmarking techniques.</li>
+            </ul>
+
+            <div class="proj-meta">
+              <div class="proj-tags">
+                <span class="ptag">JavaScript</span>
+                <span class="ptag">Node.js</span>
+                <span class="ptag">Agents SDK</span>
+                <span class="ptag">Benchmarking</span>
+              </div>
+              <a href="https://github.com/iamsumedhsg" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
+                View Repo &rarr;
+              </a>
+            </div>
+          </article>
+
+          <article class="discord-project-card">
+            <div class="proj-header">
+              <div class="proj-title-wrap">
+                <span class="proj-hash">#</span>
+                <h3 class="proj-title">type-rumble</h3>
+              </div>
+              <span class="proj-pill">TypeScript</span>
+            </div>
+
+            <p class="proj-desc">
+              Competitive real-time typing speed and accuracy testing platform built with TypeScript and modern frontend practices.
+            </p>
+
+            <ul class="proj-bullets">
+              <li>Engineered live keystroke analytics calculating Words Per Minute (WPM), accuracy, and CPM.</li>
+              <li>Built responsive, low-latency interface with immediate visual feedback and zero input lag.</li>
+            </ul>
+
+            <div class="proj-meta">
+              <div class="proj-tags">
+                <span class="ptag">TypeScript</span>
+                <span class="ptag">React.js</span>
+                <span class="ptag">State Architecture</span>
+              </div>
+              <a href="https://github.com/iamsumedhsg/TypeRumble" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
+                View Repo &rarr;
+              </a>
+            </div>
+          </article>
+
+          <article class="discord-project-card">
+            <div class="proj-header">
+              <div class="proj-title-wrap">
+                <span class="proj-hash">#</span>
+                <h3 class="proj-title">chatot-the-chatbot</h3>
+              </div>
+              <span class="proj-pill">Node.js</span>
+            </div>
+
+            <p class="proj-desc">
+              Interactive chatbot application exploring natural language dialogue flows and prompt routing.
+            </p>
+
+            <div class="proj-meta">
+              <div class="proj-tags">
+                <span class="ptag">JavaScript</span>
+                <span class="ptag">Node.js</span>
+                <span class="ptag">Web APIs</span>
+              </div>
+              <a href="https://github.com/iamsumedhsg/Chatot-the-chatbot" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
+                View Repo &rarr;
+              </a>
+            </div>
+          </article>
+
+          <article class="discord-project-card">
+            <div class="proj-header">
+              <div class="proj-title-wrap">
+                <span class="proj-hash">#</span>
+                <h3 class="proj-title">profile-inspector</h3>
+              </div>
+              <span class="proj-pill">Web Utility</span>
+            </div>
+
+            <p class="proj-desc">
+              Developer profile analysis and metrics visualization interface showcasing responsive frontend techniques.
+            </p>
+
+            <div class="proj-meta">
+              <div class="proj-tags">
+                <span class="ptag">HTML5</span>
+                <span class="ptag">CSS3</span>
+                <span class="ptag">JavaScript</span>
+              </div>
+              <a href="https://github.com/iamsumedhsg/Profile-Inspector" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
+                View Repo &rarr;
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="experience" class="profile-section">
+        <h2 class="section-label">COMMUNITY &amp; OPEN SOURCE</h2>
+        <div class="community-card">
+          <div class="comm-header">
+            <span class="comm-title">Open Source Contributor &amp; Developer</span>
+            <span class="comm-date">2024 &ndash; Present</span>
+          </div>
+          <p class="comm-desc">
+            Actively contributing to technical discussions, collaborative GitHub repositories, and peer code reviews. Exploring Git workflows, issue tracking, and collaborative multi-developer engineering.
+          </p>
+        </div>
+
+        <div class="community-card">
+          <div class="comm-header">
+            <span class="comm-title">Cross-Functional Project Collaboration</span>
+            <span class="comm-date">2026 &ndash; Present</span>
+          </div>
+          <p class="comm-desc">
+            Collaborating with cross-functional teams on operational planning, organizational initiatives, and technical communications.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="profile-section">
+        <h2 class="section-label">CONNECTED ACCOUNTS &bull; DIRECT CONTACT</h2>
+        <div class="connections-grid">
+
+          <div class="connection-item">
+            <div class="conn-icon-box">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+            </div>
+            <div class="conn-info">
+              <span class="conn-type">GitHub</span>
+              <a href="https://github.com/iamsumedhsg" target="_blank" rel="noopener noreferrer" class="conn-val">iamsumedhsg</a>
+            </div>
+            <span class="verified-badge" title="Verified Account">&#10003;</span>
+          </div>
+
+          <div class="connection-item">
+            <div class="conn-icon-box">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </div>
+            <div class="conn-info">
+              <span class="conn-type">LinkedIn</span>
+              <a href="https://linkedin.com/in/sumedh-singh-gautam" target="_blank" rel="noopener noreferrer" class="conn-val">sumedh-singh-gautam</a>
+            </div>
+            <span class="verified-badge" title="Verified Account">&#10003;</span>
+          </div>
+
+          <div class="connection-item">
+            <div class="conn-icon-box">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <div class="conn-info">
+              <span class="conn-type">Gmail / Email</span>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sumedhsinghg@gmail.com" target="_blank" rel="noopener noreferrer" class="conn-val">sumedhsinghg@gmail.com</a>
+            </div>
+            <div class="conn-actions">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sumedhsinghg@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-activate-gmail" title="Open Gmail composer">
+                Gmail
+              </a>
+              <button class="btn-copy-conn" id="copy-email-btn" data-copy="sumedhsinghg@gmail.com" title="Copy Email">
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="connection-item">
+            <div class="conn-icon-box">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="conn-info">
+              <span class="conn-type">Phone</span>
+              <a href="tel:+918383973341" class="conn-val">+91 83839 73341</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="discord-footer">
+    <div class="footer-inner">
+      <div class="footer-status-indicator">
+        <span class="footer-dot"></span>
+        <span class="footer-text">All systems operational &bull; @iamsumedhsg</span>
+      </div>
+      <div class="footer-links">
+        <a href="#about" class="footer-link">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Email copied to clipboard!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
